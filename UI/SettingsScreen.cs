@@ -357,7 +357,9 @@ namespace MediaNET.UI
                         fs.FileopRenFile.Hide();
                         fs.HideFileopButtons();
                         CConfig config = CConfig.Instance;
-                        fs.Complete((string)config["Interface/currentPath"]);
+                        if(File.Exists((string)config["Interface/currentPat        h"])) {
+                                        fs.Complete((string)config["Interface/currentPath"]);
+                        }
                         //fs.Complete("*");
                         fs.Resizable = true;
                         fs.Modal = true;

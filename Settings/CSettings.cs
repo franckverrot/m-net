@@ -33,12 +33,18 @@ namespace MediaNET.Settings
                 private static volatile CPluginManager s_vInstance;
                 private static string s_sFile = "Plugins";
                 private Hashtable assembly_path = Hashtable.Synchronized(new Hashtable());
+                private AppDomain s_sAppDomain;
 
                 ///<summary>
 				/// Default constructor, nothing to be done
 				///</summary>
                 protected CPluginManager() 
                 {
+                        // Create a separate appdomain, we could then
+                        // play with 2 different memory space :)
+                        AppDomainSetup setup = new AppDomainSetup();
+                        setup.ApplicationName = "MediaNET";
+                        s_sAppDomain = AppDomain.CreateDomain("MediaNETPluginsAppDomain",null,setup);
                 }
 
 				///<summary>
@@ -78,9 +84,9 @@ namespace MediaNET.Settings
                                 {
                                         try
                                         {
+                                                Console.WriteLine("Uploading {0}...",n["path"].InnerText);
                                                 LoadAssembly(n["extension"].InnerText,n["path"].InnerText);
                                                 SetStatic(GetOwningType(n["extension"].InnerText),"Player",n["player"].InnerText);
-
                                         }
                                         catch (Exception e)
                                         {
@@ -117,7 +123,14 @@ namespace MediaNET.Settings
                                                 throw new Exception("Already loaded assembly... aborting");
                                 }
 
+                                /*
+                                AssemblyName an = AssemblyName.GetAssemblyName(filename);
+                                Assembly assembly = s_sAppDomain.Load(an.FullName);
+                                foreach(Assembly ok in s_sAppDomain.GetAssemblies()) {
+                                        Console.WriteLine("=> "+ok.ToString());
+                                }*/
                                 Assembly assembly = Assembly.LoadFile(filename);
+                                
                                 Add(key,assembly);
                                 assembly_path.Add(key,filename);
                         } 

@@ -39,8 +39,11 @@ public class AboutScreen
 		Glade.XML glade = new Glade.XML(null,MediaNET.MediaNET.GladeCommonFilename, "AboutScreenWindow", null);
 		glade.BindFields(this);
 		glade.Autoconnect(this);
-        ((Gtk.Image)glade["image"]).Pixbuf = Gdk.Pixbuf.LoadFromResource("Franck.jpg");
-        
+        Gdk.Pixbuf pb = Gdk.Pixbuf.LoadFromResource("Franck.jpg");
+        int DimensionsY = pb.Height;
+        int DimensionsX = pb.Width;
+        int W = 200,H=200;
+        ((Gtk.Image)glade["image"]).Pixbuf = pb.ScaleSimple(W*DimensionsX/DimensionsY,H,Gdk.InterpType.Bilinear);
 		m_cWindow.Show();
 		while (Gtk.Application.EventsPending()) 
 		{

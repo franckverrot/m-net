@@ -39,6 +39,7 @@ using System.Runtime;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
+
 namespace MediaNET 
 {
         // Main Window class
@@ -52,6 +53,15 @@ namespace MediaNET
                 static private volatile MediaNET s_vInstance;
                 static private readonly string s_sFile = "MediaNET";
                 static private bool s_bContinue = false;
+
+				// Loading frontend
+                private static Dialog s_LoadingDialog = null;
+                private static Label s_LoadingDialog_label = null;
+
+                /// <summary>
+                /// Save the unhandled files when trying to add new elements
+                /// </summary>
+                private ArrayList s_alUnhandled = null; // Handle unknown types
 
                 // Player's process
                 private System.Diagnostics.Process s_playerProc
@@ -73,11 +83,9 @@ namespace MediaNET
 
                 //#end region members
 
-                /////////////////////////////////////:
-                /// Code
-                /////////////////////////////////////
-                // Constructor
-                /////////////////////////////////////
+				 /// <summary>
+				 /// <p> Default constructor </p>
+				 /// </summary>
                 private MediaNET ()
                 {
                         Mono.Posix.Catalog.Init ("medianet", "./locale");
@@ -123,7 +131,7 @@ namespace MediaNET
                         // Init player
                         m_bIsPlaying = false;
                         s_playerProc.EnableRaisingEvents = true;
-                        //s_playerProc.Exited += new EventHandler(OnPlayerExcited);
+                        s_playerProc.Exited += new EventHandler(OnPlayerExcited);
 
                         // Launching webserver
                         WebServer(DAEMON_STATUS.START);
@@ -132,7 +140,11 @@ namespace MediaNET
                         Application.Run();
                 }
 
-                ~MediaNET()
+				 /// <summary>
+				 /// <p> Default destructor </p>
+				  /// </summary>
+                public void Finalize()
+                        //~MediaNET()
                 {
                         try
                         {
@@ -155,6 +167,10 @@ namespace MediaNET
                         }
                 }
 
+				/// <summary>
+				/// <p> Instance is a double lock thread-safe singleton's accessors.</p>
+				/// <returns>The unique instance of the class MediaNET.</returns> 
+				/// </summary>
                 static public MediaNET Instance
                 {
                         get
@@ -171,6 +187,9 @@ namespace MediaNET
                         }
                 }
 
+				/// <summary>
+				/// <p> MediaNET's entry point.</p>
+				/// </summary>
                 //[STAThread]
                 public static void Main(string[] args)
                 {
@@ -191,19 +210,34 @@ namespace MediaNET
                         }
                 }
 
+				/// <summary>
+				/// <p>The OnItemQuit method is used whenever the user wants to exit the application.</p>
+				/// </summary>
+				/// <param name="o">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
                 override public void OnItemQuit(object obj,EventArgs args)
                 {
                         Application.Quit();
                 }
 
-                ///<summary>
-                ///Will change the statusBar text
-                ///</summary>
+                /// <summary>
+				/// <p>The ChangeStatusBar method takes a string to specify the current status bar text. </p>
+				/// <p>This method is used to inform the user of what the program is actually doing.</p>
+				/// </summary>
+				/// <example><code>MyMediaNET.ChangeStatusbar("Playing foobar")</code></example>
+				/// <param name="status_text">The string to display in the status bar</param>
                 override public void ChangeStatusbar (string status_text) 
                 {
                         m_sCurrentText = status_text;
                         statusbar.Push (1, status_text);
                 }
+                
+                /// <summary>
+				/// <p>The OnAddButton method is the default handler for any activation of the "Add" button</p>
+				/// <p>This method is core the functioning of the application and is used widely.</p>
+				/// </summary>
+				/// <param name="o">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
                 override public void OnAddButton(object o,EventArgs args)
                 {
                         s_bContinue = true;
@@ -260,6 +294,12 @@ namespace MediaNET
 
                 }
 
+				/// <summary>
+				/// <p>The DelFromCollection method is an easy way to delete an element from the database.</p>
+				/// <p>Its existence is due to code refactoring and is used widely.</p>
+				/// </summary>
+				/// <example><code>MyMediaNETInstance.DelFromCollection("as_string_which_is_a_key_in_database")</code></example>
+				/// <param name="gid">The key used in database</param>
                 private void DelFromCollection(string gid)
                 {
                         Query q = new Query();
@@ -269,6 +309,11 @@ namespace MediaNET
                                 m_cCollection.Remove(media);
                         }
                 }
+                
+                /// <summary>
+				/// <p>The DeleteSelectedItem method is triggered whenever the user wants to delete the selected item from the default treeview.</p>
+				/// </summary>
+				/// <example><code>MyMediaNETInstance.DeleteSelectedItem()/code></example>
                 private void DeleteSelectedItem()
                 {
                         TreeModel model=itemList.Model;
@@ -296,11 +341,21 @@ namespace MediaNET
                         }
                 }
 
+				/// <summary>
+				/// <p>The OnDelButton event handler is triggered when the user click on the "Delete" button.</p>
+				/// </summary>
+				/// <param name="o">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
                 override public void OnDelButton(object o, EventArgs args)
                 {
                         DeleteSelectedItem();
                 }
 
+				/// <summary>
+				/// <p>The OnDelete_Key_Pressed event handler is triggered when the user click on the "Delete" key.</p>
+				/// </summary>
+				/// <param name="o">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
                 public void On_Delete_Key_Pressed(object o, KeyPressEventArgs args)
                 {
                         switch(args.Event.HardwareKeycode)
@@ -333,9 +388,12 @@ namespace MediaNET
                         }
                 }
 
-                ///<summary>
-                /// Do a regexp based search in files loaded in media collection
-                ///</summary>
+                /// <summary>
+				/// <p>The OnSearch event handler is triggered when the user click on the "Search" button.</p>
+				/// <p> This function perform a regexp based search in files loaded in media collection</p>
+				/// </summary>
+				/// <param name="obj">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
                 override public void OnSearch(object obj,EventArgs args)
                 {
                         if (searchButton.Active)
@@ -371,15 +429,21 @@ namespace MediaNET
                         }
                 }
 
-                // Auto Trigger an event on entry modification
+                 /// <summary>
+				/// <p>The OnModifiedSearchEntry event handler is triggered when the user press the return key in the search entry.</p>
+				/// <p> This function triggers the OnSearch method on entry modification.</p>
+				/// </summary>
+				/// <param name="obj">The sender objet</param>
+				/// <param name="args">Arguments to be passed</param>	
+				/// <seealso cref="MediaNET.OnSearch" />
                 private void OnModifiedSearchEntry(object o, EventArgs args)
                 {
                         searchButton.Active = true;
                 }
 
-                ///<summary>
-                /// Initialize database from a file
-                ///</summary>
+                /// <summary>
+				/// <p>The InitDB method initialize a database from a file</p>
+				/// </summary>
                 override public void InitDB()
                 {
                         CMediaCollection c = null;
@@ -404,9 +468,9 @@ namespace MediaNET
                 }
 
 
-                ///<summary>
-                /// Initialize interface on first load
-                ///</summary>
+                /// <summary>
+				/// <p>The InitInterface method initialize the interface on first load.</p>
+				/// </summary>
                 override public void InitInterface()
                 {
                         ChangeStatusbar(Mono.Posix.Catalog.GetString ("Welcome to MediaNET!"));
@@ -455,14 +519,13 @@ namespace MediaNET
                         OnResize(null,null);
                 }
 
-                /// <summary>
-                /// Save the unhandled files when trying to add new elements
-                /// </summary>
-                private ArrayList s_alUnhandled = null; // Handle unknown types
 
                 /// <summary>
-                /// Add file extension without doublon to an arraylist
+                /// <p>The AddToArrayListWithOutDoublon adds a file extension without doublon to an arraylist.</p>
+                /// <p>This function works with the s_alUnhandled arraylist. </p>
                 /// </summary>
+                /// <param name="al">The targetted arraylist</param>
+				/// <param name="o">The string to add</param>	
                 private void AddToArrayListWithOutDoublon(ArrayList al, string o) {
                         string ext = Path.GetExtension(o);
                         if(!al.Contains(ext))
@@ -470,9 +533,11 @@ namespace MediaNET
                 }
 
                 /// <summary>
-                /// Load an array of string with files or directories path inside.
+                /// <p> The LoadFiles function is a recursive loading function used whenever the user wants to add a file to his collection.</p>
+                /// <p>It loads each file in the array of string, and its subdirectories if exist, with the LoadFile function.</p>
                 /// </summary>
-                /// <param name="fileNames"></param>
+                /// <param name="fileNames">The list of files to load</param>
+                /// <seealso cref="MediaNET.LoadFile" />
                 override public void LoadFiles(string [] fileNames)
                 {
                         if(s_bContinue == true)
@@ -508,9 +573,13 @@ namespace MediaNET
                         }
                 }
 
-                ///<summary>
-                /// Load any file: dispatch to methods based on extension name
-                ///</summary>
+
+                /// <summary>
+                /// <p> The LoadFile function is used by LoadFiles to load a single file.</p>
+                /// <p> It loads any file and dispatch hadling to correct methods based on extension name. </p>
+                /// </summary>
+                /// <param name="fileName">The single file to load</param>
+                /// <seealso cref="MediaNET.LoadFiles" />                 
                 override public void LoadFile(string fileName)
                 {
                         if (fileName.Length > 0 && File.Exists(fileName)) 
@@ -527,13 +596,12 @@ namespace MediaNET
                                                 throw new Exception(Mono.Posix.Catalog.GetString ("Plugin ERROR"));
                                         }
 
-                                        m_cCollection.Add(t);
-
                                         Type type = t.GetType();
                                         CPluginManager.InvokeMember(type,"loadFileCharacteristics", t,CPluginManager.Flags.Method);
                                         object res = CPluginManager.InvokeMember(type,"Summary",t,CPluginManager.Flags.Field);
 
                                         itemStore.AppendValues((string[])res);
+                                        m_cCollection.Add(t);
                                         t = null; res = null;
                                 } 
                                 catch (Exception e) 
@@ -546,8 +614,6 @@ namespace MediaNET
 
                 }
 
-                private static Dialog s_LoadingDialog = null;
-                private static Label s_LoadingDialog_label = null;
 
                 private static void UpdateDialog (string format, params object[] args) 
                 {
@@ -944,6 +1010,7 @@ namespace MediaNET
 
                 override public void OnPlayButton(object o, EventArgs args)
                 {
+                        OnStopButton(null,null);
                         TreeModel model = itemList.Model;
                         Gtk.TreeIter iter = new Gtk.TreeIter();
                         if(itemList.Selection.GetSelected (out model, out iter))
@@ -955,7 +1022,6 @@ namespace MediaNET
                                 {
                                         try
                                         {
-                                                //OnStopButton(null,null);
                                                 Type type = s.GetType();
                                                 s_playerProc.StartInfo.FileName = "\""+(string)CPluginManager.GetStatic(type,"Player")+"\"";
                                                 s_playerProc.StartInfo.Arguments = "\""+(string)CPluginManager.InvokeMember(type,"Path",s,CPluginManager.Flags.Field)+"\"";
@@ -972,6 +1038,8 @@ namespace MediaNET
                                 }
 
                         }
+                        while (Application.EventsPending () && m_bIsPlaying)
+                                Gtk.Application.RunIteration(false);
                 }
 
                 override public void OnStopButton(object o, EventArgs args)

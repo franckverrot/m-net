@@ -27,10 +27,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace MediaNET.DB 
 {
         ///<summary>
-        /// Multithreaded Singleton with double-check locking idiom 
+        /// <p> CMediaCollection: an obect database class </p>
+        /// <p>Multithreaded Singleton with double-check locking idiom 
         /// This collection is an pure-object database with simple query
-        /// support. All object are then serialized in collection.odb file.
-        ///</summary>
+        /// support. All object are then serialized in collection.odb file.</p>
+        ///</summary>        
         [Serializable]
                 public sealed class CMediaCollection: ArrayList
                 {
@@ -43,12 +44,12 @@ namespace MediaNET.DB
 
 
                         ///<summary>
-                        ///Private constructor...
+                        /// <p> Private constructor... </p>
                         ///</summary>
                         private CMediaCollection() { }
 
                         ///<summary>
-                        /// Get the unique instance of the collection
+                        /// <p>Get the unique instance of the collection</p>
                         ///</summary>
                         public static CMediaCollection Instance
                         {
@@ -68,7 +69,8 @@ namespace MediaNET.DB
                         }			
 
                         ///<summary>
-                        /// Get/Set the collection file name
+                        /// <p> Location property </p>
+                        /// <p>  Get/Set the collection file name</p>
                         ///</summary>
                         public string Location
                         {
@@ -77,7 +79,7 @@ namespace MediaNET.DB
                         }
                         
                         ///<summary>
-                        /// Save all the data, object got to be serializable
+                        /// <p>Save all the data, object got to be serializable</p>
                         ///</summary>
                         public bool Save()
                         {
@@ -98,7 +100,7 @@ namespace MediaNET.DB
                         }
 
                         ///<summary>
-                        /// Load all the data
+                        /// <p>Load all the data</p>
                         ///</summary>
                         public bool Load()
                         {
@@ -131,6 +133,34 @@ namespace MediaNET.DB
                                 return false;
                         }
 
+						/// <summary>
+						/// <p>The Search method takes a series of parameters to specify the search criterion ordered in a Query class
+						/// and returns an array containing the result set.</p>
+						/// <p>This method is core the functioning of the application and is used widely.
+						/// If you need more advanced options, look at <see cref="Query"/></p>
+						/// </summary>
+						/// <example><code>
+						/// 	Query q = new Query();
+                        /// 	q.AddCriteria("GID",gid);
+                        ///		foreach(object media in CMediaCollection.Instance.Search(q))
+                        ///		{
+                        ///     CMediaCollection.Instance.Remove(media);
+                        ///		}
+						///</code></example>
+						/// <param name="ref_object">The query object containing criterion that we are searching for</param>
+						/// <returns>An array istance containing the matching objects. </returns>
+						/// <remarks> Remember that when you use this method you should:
+						/// <list type="bullet">
+						/// <item>
+						/// <term>Test</term>
+						/// <description> for performance</description>
+						/// </item>
+						/// <item>
+						/// <term>Test</term>
+						/// <description> for scalability</description>
+						/// </item>
+						/// </list>
+					    /// </remarks>
                         public Array Search(Query ref_object)
                         {
                                 ArrayList array = new ArrayList();
@@ -161,7 +191,7 @@ namespace MediaNET.DB
                         }
                 }
         ///<summary>
-        /// Provide a full customized selection of items
+        /// <p>Provide a full customized selection of items</p>
         ///</summary>
         public class Query: Hashtable 
         {

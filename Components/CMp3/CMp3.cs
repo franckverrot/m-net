@@ -635,6 +635,8 @@ namespace MediaNET.Components
                                                 if(id3Genre >= 0 && id3Genre < genres.Length)
                                                         ((Gtk.Entry)m_displayXML["entryGenre"]).Text = Genre;
 
+                                                // Try to find an cover or
+                                                // fallback on an icon
                                                 string [] list =  {
                                                         "cover.jpg",
                                                         Title.Replace(".mp3",".jpg"),
@@ -642,19 +644,28 @@ namespace MediaNET.Components
                                                         Title.Replace(".mp3",".png"),
                                                         Title.Replace(".mp3",".PNG")
                                                 };
-                                                foreach(string alt in list)
+                                                bool coverFound = false;
+                                                foreach(string alt in list) // Try to load a cover...
                                                 {
                                                         string cover = System.IO.Path.GetDirectoryName(CompleteFileName)+System.IO.Path.DirectorySeparatorChar.ToString()+alt;
-                                                        if (File.Exists(cover)) 
+                                                        if (File.Exists(cover))
                                                         {
                                                                 Gtk.Image image = new Gtk.Image(cover);
                                                                 int DimensionsY = image.Pixbuf.Height;
                                                                 int DimensionsX = image.Pixbuf.Width;
                                                                 ((Gtk.Image)m_displayXML["image"]).Pixbuf = (new Gtk.Image(cover)).Pixbuf.ScaleSimple 
                                                                         (W*DimensionsX/DimensionsY,H,Gdk.InterpType.Bilinear);
+                                                                coverFound = true;
                                                                 break;
                                                         }
                                                 }
+                                                if(coverFound == false) {
+                                                        Gdk.Pixbuf pb = Gdk.Pixbuf.LoadFromResource("gnome-mime-audio-x-mp3.png");
+                                                        ((Gtk.Image)m_displayXML["image"]).Pixbuf = pb; //.ScaleSimple(W*pb.Width/pb.Height,H,Gdk.InterpType.Bilinear);
+
+                                                }
+
+                                                // Return the filled frame
                                                 return m_displayXML.GetWidget("showFrame") as Gtk.Widget;
                                         } catch(Exception e) {
                                                 Console.WriteLine("CMp3 Display: "+e.Message);
