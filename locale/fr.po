@@ -1,0 +1,457 @@
+# French translations for PACKAGE package.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Franck <root@dev-fr.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-06 10:31+0100\n"
+"PO-Revision-Date: 2005-03-06 10:32+0100\n"
+"Last-Translator: Franck <root@dev-fr.com>\n"
+"Language-Team: French <traduc@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: UI/medianet.glade:8
+msgid "Rechercher"
+msgstr ""
+
+#: UI/medianet.glade:49
+msgid "Entrez la recherche:"
+msgstr ""
+
+#: UI/medianet.glade:72
+msgid "Chercher!"
+msgstr ""
+
+#: UI/medianet.glade:90
+msgid "Annuler\n"
+msgstr ""
+
+#: UI/medianet.glade:108
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: UI/medianet.glade:145
+msgid "dialog1"
+msgstr ""
+
+#: UI/medianet.glade:175
+msgid "Copy"
+msgstr "Copier"
+
+#: UI/medianet.glade:190
+msgid "OK"
+msgstr ""
+
+#: UI/medianet.glade:205
+msgid "Report bug"
+msgstr "Reporter une erreur"
+
+#: UI/medianet.glade:263
+msgid "MediaNET"
+msgstr ""
+
+#: UI/medianet.glade:286
+msgid "Menu!"
+msgstr ""
+
+#: UI/medianet.glade:292
+msgid "Miscellaneous commands"
+msgstr "Commandes diverses"
+
+#: UI/medianet.glade:293
+msgid "_File"
+msgstr "_Fichier"
+
+#: UI/medianet.glade:314
+msgid "Save Database"
+msgstr "Sauvegarder la base"
+
+#: UI/medianet.glade:323
+msgid "Reload database"
+msgstr "Recharger la base"
+
+#: UI/medianet.glade:332
+msgid "_Quit"
+msgstr "_Quitter"
+
+#: UI/medianet.glade:345
+msgid "Options"
+msgstr ""
+
+#: UI/medianet.glade:346
+msgid "_Options"
+msgstr ""
+
+#: UI/medianet.glade:367
+msgid "Edit Settings"
+msgstr "Editer les preferences"
+
+#: UI/medianet.glade:376
+msgid "Generate XML"
+msgstr "Generer le XML"
+
+#: UI/medianet.glade:385
+msgid "Generate HTML"
+msgstr "Generer le HTML"
+
+#: UI/medianet.glade:398 UI/medianet.glade:420 UI/medianet.glade:1684
+msgid "Help"
+msgstr "Aide"
+
+#: UI/medianet.glade:399
+msgid "_Help"
+msgstr "_Aide"
+
+#: UI/medianet.glade:441
+msgid "A_Propos"
+msgstr ""
+
+#: UI/medianet.glade:492
+msgid "Add media file"
+msgstr "Ajouter un fichier"
+
+#: UI/medianet.glade:520
+msgid "Delete media file"
+msgstr "Supprimer le fichier"
+
+#: UI/medianet.glade:570
+msgid "Play"
+msgstr "Jouer"
+
+#: UI/medianet.glade:598
+msgid "Show information"
+msgstr "Montrer les informations"
+
+#: UI/medianet.glade:626
+msgid "Refresh the list after editing"
+msgstr "Rafraichir la liste apres edition"
+
+#: UI/medianet.glade:768
+msgid " Search: "
+msgstr " Chercher: "
+
+#: UI/medianet.glade:854
+msgid "Search"
+msgstr "Chercher"
+
+#: UI/medianet.glade:973
+msgid "Show"
+msgstr "Montrer"
+
+#: UI/medianet.glade:1024
+msgid "Edit Tag"
+msgstr "Editer les Metadonnees"
+
+#: UI/medianet.glade:1079
+msgid "Settings"
+msgstr "Parametres"
+
+#: UI/medianet.glade:1127
+msgid "Select language:"
+msgstr "Selectionner la langue"
+
+#: UI/medianet.glade:1148
+msgid "This does not work :D"
+msgstr "Ca mach' pas! :D"
+
+#: UI/medianet.glade:1218
+msgid "Add"
+msgstr "Ajouter"
+
+#: UI/medianet.glade:1293
+msgid "Remove"
+msgstr "Supprimer"
+
+#: UI/medianet.glade:1345
+msgid "Default path: "
+msgstr "Repertoire par defaut :"
+
+#: UI/medianet.glade:1366
+msgid "Points to the defaut select path when trying to add a media file"
+msgstr "Chemin par defaut pour l'ajout de media"
+
+#: UI/medianet.glade:1429 UI/medianet.glade:1557 UI/medianet.glade:1811
+msgid "Browse"
+msgstr "Parcourir"
+
+#: UI/medianet.glade:1474
+msgid "Plugin configuration file :"
+msgstr "Fichier de configuration des greffons :"
+
+#: UI/medianet.glade:1602
+msgid "Announcer sentence :"
+msgstr "Phrase d'annonce :"
+
+#: UI/medianet.glade:1627
+msgid "[MediaNET] Currently sound bombing on [[title]]"
+msgstr "[MediaNET] Ecoute actuellement [[title]]"
+
+#: UI/medianet.glade:1729
+msgid "Database file :"
+msgstr "Fichier de sauvegarde :"
+
+#: UI/medianet.glade:1856
+msgid "General"
+msgstr "General"
+
+#: UI/medianet.glade:1959
+msgid "Add plugin"
+msgstr "Ajouter un greffon"
+
+#: UI/medianet.glade:2034
+msgid "Remove plugin"
+msgstr "Supprimer le greffon"
+
+#: UI/medianet.glade:2119
+msgid "Reload selected plugin"
+msgstr "Recharger ce greffon uniquement"
+
+#: UI/medianet.glade:2193
+msgid "Reload all plugins"
+msgstr "Recharger tous les greffons"
+
+#: UI/medianet.glade:2279
+msgid "What's this plugin?"
+msgstr "Quel est ce greffon?"
+
+#: UI/medianet.glade:2334
+msgid ""
+"In this box will appear the description coming from the plugin. You should "
+"see here all you want to know about it.\n"
+"\n"
+"If you're a developper, please make sure you've correctly overriden the "
+"Identify function.\n"
+"\n"
+"If you're an user, this box should provide all informations you would need "
+"to use this plugin.\n"
+"\n"
+"All media files need plugins, there's no built-in plugin in MediaNET because "
+"it's very easy to implement all you want. Please visit our project web site "
+"for more information and to get plugins."
+msgstr ""
+"Dans cette fenetre apparaitront les descriptions provenant du greffon. Vous"
+"devriez y trouver tout ce donc vous avez besoin de savoir.\n"
+"\n"
+"Si vous etes developpeur, verifiez que vous avez correctement surcharge la"
+"methode d'identification Identify.\n"
+"\n"
+"Si vous etes utilisateur, cette fenetre vous fournir toutes les informations"
+"dont vous aurez besoin pour utiliser ce greffon.\n"
+"\n"
+"Tous les fichiers multimedia ont besoin de grffons, il n'y a pas de types"
+"integres a MediaNET car il est tres facile d'en ajouter. Visitez notre site"
+"web pour plus d'informations sur l'obtention de nouveaux plugins ou leurs"
+"utilisations."
+
+#: UI/medianet.glade:2367
+msgid "Plugins"
+msgstr "Greffons"
+
+#: UI/medianet.glade:2449
+msgid "Factory settings"
+msgstr "Parametres par defaut"
+
+#: UI/medianet.glade:2525
+msgid "Cancel"
+msgstr "Annuler"
+
+#: UI/medianet.glade:2601
+msgid "Close"
+msgstr "Fermer"
+
+#: UI/medianet.glade:2677
+msgid "Apply"
+msgstr "Appliquer"
+
+#: UI/medianet.glade:2717
+msgid "About"
+msgstr "A propos"
+
+#: UI/medianet.glade:2798
+msgid "ec4"
+msgstr ""
+
+#: UI/medianet.glade:2852
+msgid "ChOcO-Bn"
+msgstr ""
+
+#: UI/medianet.glade:2906
+msgid "LXS"
+msgstr ""
+
+msgid "An exception has been raised: "
+msgstr "Une exception a ete levee: "
+
+msgid "MediaNET is now closed."
+msgstr "MediaNET est correctement arrete"
+
+
+msgid "Choose a file"
+msgstr "Choisissez un fichier"
+
+
+msgid "Add the correct plugin or tell developpers about this:"
+msgstr "Ajouter le bon greffon ou contactez les developpeurs a propos de:"
+
+
+msgid "Some files have unknown types..."
+msgstr "Des fichiers ont des types inconnus..."
+
+
+msgid " errors..."
+msgstr " erreurs..."
+
+
+msgid "Loading finished with success..."
+msgstr "Chargement reussi"
+
+
+msgid "Do you want to delete the selected file?"
+msgstr "Voulez vous supprimer le fichier selectionne?"
+
+
+msgid "Are you sure?"
+msgstr "Etes vous sur ?"
+
+
+msgid "**** Invalid regexp ****"
+msgstr "**** Expression reguliere invalide ****"
+
+
+msgid "Welcome to MediaNET!"
+msgstr "Bienvenue dans MediaNET!"
+
+
+msgid "Title"
+msgstr "Titre"
+
+
+msgid "Author"
+msgstr "Auteur"
+
+
+msgid "Type"
+msgstr "Type"
+
+
+msgid "Length"
+msgstr "Taille"
+
+
+msgid "Rate"
+msgstr "Note"
+
+
+msgid "Loading "
+msgstr "Chargement "
+
+msgid "Plugin ERROR"
+msgstr "Erreur du greffon"
+
+
+msgid "Error! "
+msgstr "Erreur! "
+
+
+msgid "Loading media files..."
+msgstr "Chargement des fichiers..."
+
+
+msgid "Cancel loading..."
+msgstr "Arreter le chargement..."
+
+
+msgid "Right click launched directly the music"
+msgstr "Clic droit pour lancer le lecteur"
+
+
+msgid "Exception DisplayInformation raised: "
+msgstr ""
+
+
+msgid "All"
+msgstr "Tout"
+
+
+msgid "Invoking "
+msgstr "Invocation "
+
+
+msgid "New display has been aborted: "
+msgstr ""
+
+
+msgid "New Edit has been aborted: "
+msgstr ""
+
+
+msgid "Exception has been raised: "
+msgstr ""
+
+
+msgid "length"
+msgstr "taille"
+
+
+msgid "OnGenerateHTML: Not yet supported"
+msgstr "OnGenerateHTML: Pas encore supporte"
+
+
+msgid "Loading done!"
+msgstr "Chargement fini!"
+
+
+msgid "Process ID "
+msgstr ""
+
+
+msgid "Process can't be loaded : "
+msgstr ""
+
+
+msgid "Process can't be stopped : "
+msgstr ""
+
+
+msgid "Client: "
+msgstr ""
+
+
+msgid " MediaNET, en voila un soft qu'il est bien! "
+msgstr ""
+
+
+msgid "DeliverContent: "
+msgstr ""
+
+
+msgid "One client connected and gone..."
+msgstr ""
+
+
+msgid "SocketListener is now closed"
+msgstr ""
+
+
+msgid "End of listening..."
+msgstr ""
+
+
+msgid "Starting web server..."
+msgstr ""
+
+
+msgid "Stopping web server..."
+msgstr ""
+
+
+msgid "Reloading web server..."
+msgstr ""
+
+

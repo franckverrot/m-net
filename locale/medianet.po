@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-06 10:31+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: UI/medianet.glade:8
+msgid "Rechercher"
+msgstr ""
+
+#: UI/medianet.glade:49
+msgid "Entrez la recherche:"
+msgstr ""
+
+#: UI/medianet.glade:72
+msgid "Chercher!"
+msgstr ""
+
+#: UI/medianet.glade:90
+msgid "Annuler\n"
+msgstr ""
+
+#: UI/medianet.glade:108
+msgid "Loading..."
+msgstr ""
+
+#: UI/medianet.glade:145
+msgid "dialog1"
+msgstr ""
+
+#: UI/medianet.glade:175
+msgid "Copy"
+msgstr ""
+
+#: UI/medianet.glade:190
+msgid "OK"
+msgstr ""
+
+#: UI/medianet.glade:205
+msgid "Report bug"
+msgstr ""
+
+#: UI/medianet.glade:263
+msgid "MediaNET"
+msgstr ""
+
+#: UI/medianet.glade:286
+msgid "Menu!"
+msgstr ""
+
+#: UI/medianet.glade:292
+msgid "Miscellaneous commands"
+msgstr ""
+
+#: UI/medianet.glade:293
+msgid "_File"
+msgstr ""
+
+#: UI/medianet.glade:314
+msgid "Save Database"
+msgstr ""
+
+#: UI/medianet.glade:323
+msgid "Reload database"
+msgstr ""
+
+#: UI/medianet.glade:332
+msgid "_Quit"
+msgstr ""
+
+#: UI/medianet.glade:345
+msgid "Options"
+msgstr ""
+
+#: UI/medianet.glade:346
+msgid "_Options"
+msgstr ""
+
+#: UI/medianet.glade:367
+msgid "Edit Settings"
+msgstr ""
+
+#: UI/medianet.glade:376
+msgid "Generate XML"
+msgstr ""
+
+#: UI/medianet.glade:385
+msgid "Generate HTML"
+msgstr ""
+
+#: UI/medianet.glade:398 UI/medianet.glade:420 UI/medianet.glade:1684
+msgid "Help"
+msgstr ""
+
+#: UI/medianet.glade:399
+msgid "_Help"
+msgstr ""
+
+#: UI/medianet.glade:441
+msgid "A_Propos"
+msgstr ""
+
+#: UI/medianet.glade:492
+msgid "Add media file"
+msgstr ""
+
+#: UI/medianet.glade:520
+msgid "Delete media file"
+msgstr ""
+
+#: UI/medianet.glade:570
+msgid "Play"
+msgstr ""
+
+#: UI/medianet.glade:598
+msgid "Show information"
+msgstr ""
+
+#: UI/medianet.glade:626
+msgid "Refresh the list after editing"
+msgstr ""
+
+#: UI/medianet.glade:768
+msgid " Search: "
+msgstr ""
+
+#: UI/medianet.glade:854
+msgid "Search"
+msgstr ""
+
+#: UI/medianet.glade:973
+msgid "Show"
+msgstr ""
+
+#: UI/medianet.glade:1024
+msgid "Edit Tag"
+msgstr ""
+
+#: UI/medianet.glade:1079
+msgid "Settings"
+msgstr ""
+
+#: UI/medianet.glade:1127
+msgid "Select language:"
+msgstr ""
+
+#: UI/medianet.glade:1148
+msgid "This does not work :D"
+msgstr ""
+
+#: UI/medianet.glade:1218
+msgid "Add"
+msgstr ""
+
+#: UI/medianet.glade:1293
+msgid "Remove"
+msgstr ""
+
+#: UI/medianet.glade:1345
+msgid "Default path: "
+msgstr ""
+
+#: UI/medianet.glade:1366
+msgid "Points to the defaut select path when trying to add a media file"
+msgstr ""
+
+#: UI/medianet.glade:1429 UI/medianet.glade:1557 UI/medianet.glade:1811
+msgid "Browse"
+msgstr ""
+
+#: UI/medianet.glade:1474
+msgid "Plugin configuration file :"
+msgstr ""
+
+#: UI/medianet.glade:1602
+msgid "Announcer sentence :"
+msgstr ""
+
+#: UI/medianet.glade:1627
+msgid "[MediaNET] Currently sound bombing on [[title]]"
+msgstr ""
+
+#: UI/medianet.glade:1729
+msgid "Database file :"
+msgstr ""
+
+#: UI/medianet.glade:1856
+msgid "General"
+msgstr ""
+
+#: UI/medianet.glade:1959
+msgid "Add plugin"
+msgstr ""
+
+#: UI/medianet.glade:2034
+msgid "Remove plugin"
+msgstr ""
+
+#: UI/medianet.glade:2119
+msgid "Reload selected plugin"
+msgstr ""
+
+#: UI/medianet.glade:2193
+msgid "Reload all plugins"
+msgstr ""
+
+#: UI/medianet.glade:2279
+msgid "What's this plugin?"
+msgstr ""
+
+#: UI/medianet.glade:2334
+msgid ""
+"In this box will appear the description coming from the plugin. You should "
+"see here all you want to know about it.\n"
+"\n"
+"If you're a developper, please make sure you've correctly overriden the "
+"Identify function.\n"
+"\n"
+"If you're an user, this box should provide all informations you would need "
+"to use this plugin.\n"
+"\n"
+"All media files need plugins, there's no built-in plugin in MediaNET because "
+"it's very easy to implement all you want. Please visit our project web site "
+"for more information and to get plugins."
+msgstr ""
+
+#: UI/medianet.glade:2367
+msgid "Plugins"
+msgstr ""
+
+#: UI/medianet.glade:2449
+msgid "Factory settings"
+msgstr ""
+
+#: UI/medianet.glade:2525
+msgid "Cancel"
+msgstr ""
+
+#: UI/medianet.glade:2601
+msgid "Close"
+msgstr ""
+
+#: UI/medianet.glade:2677
+msgid "Apply"
+msgstr ""
+
+#: UI/medianet.glade:2717
+msgid "About"
+msgstr ""
+
+#: UI/medianet.glade:2798
+msgid "ec4"
+msgstr ""
+
+#: UI/medianet.glade:2852
+msgid "ChOcO-Bn"
+msgstr ""
+
+#: UI/medianet.glade:2906
+msgid "LXS"
+msgstr ""
