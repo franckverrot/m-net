@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="117"
+   name=""
+   committed-date="2005-01-12T17:12:33.251385Z"
+   url="http://www.dev-fr.com/MediaNET/src"
+   kind="dir"
+   uuid="88aef539-b3e6-0310-b758-c3ab676ffb8b"
+   revision="117"/>
+<entry
+   committed-rev="126"
+   name="AssemblyInfo.cs"
+   text-time="2005-03-09T09:52:55.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="6dd39c0a36ed5e6173a0963129c82be2"
+   last-author="lxs"
+   kind="file"
+   revision="126"/>
+<entry
+   name="Settings"
+   kind="dir"/>
+<entry
+   name="Components"
+   kind="dir"
+   copyfrom-rev="32"
+   copyfrom-url="http://www.dev-fr.com/MediaNET/src/fileType"/>
+<entry
+   name="DB"
+   kind="dir"/>
+<entry
+   committed-rev="126"
+   name="MediaNET.cs"
+   text-time="2005-03-09T10:07:10.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="d329568e5d65c2c9462530688128ac5e"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-16T11:49:32.000000Z"
+   revision="126"/>
+<entry
+   name="UI"
+   kind="dir"/>
+<entry
+   committed-rev="126"
+   name="Makefile"
+   text-time="2005-03-06T10:06:08.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="1f0fcc24567a5c6510a8e76794843312"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-16T11:49:32.000000Z"
+   revision="126"/>
+<entry
+   name="InternetDB"
+   kind="dir"
+   deleted="true"
+   copyfrom-rev="32"
+   copyfrom-url="http://www.dev-fr.com/MediaNET/src/internetDB"/>
+</wc-entries>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="117"
+   name=""
+   committed-date="2005-01-12T17:12:33.251385Z"
+   url="http://www.dev-fr.com/MediaNET/src/Components"
+   kind="dir"
+   uuid="88aef539-b3e6-0310-b758-c3ab676ffb8b"
+   revision="117"/>
+<entry
+   name="COgg"
+   kind="dir"/>
+<entry
+   name="CMkv"
+   kind="dir"/>
+<entry
+   name="CAvi"
+   kind="dir"/>
+<entry
+   name="CMp3"
+   kind="dir"/>
+<entry
+   name="CJpg"
+   kind="dir"/>
+<entry
+   name="COgm"
+   kind="dir"/>
+<entry
+   committed-rev="126"
+   name="Makefile"
+   text-time="2005-03-04T20:37:54.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="035b3f3aca0be305021e2688f3321b70"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-16T11:49:32.000000Z"
+   revision="126"/>
+<entry
+   name="Plugin"
+   kind="dir"/>
+</wc-entries>

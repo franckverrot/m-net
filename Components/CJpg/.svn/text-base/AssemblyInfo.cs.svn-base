@@ -1,0 +1,16 @@
+using System.Reflection;
+using System.Runtime.CompilerServices;
+
+[assembly: AssemblyTitle("Jpeg plugin")]
+[assembly: AssemblyDescription("Jpeg file format support")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Franck Verrot")]
+[assembly: AssemblyProduct("MediaNET")]
+[assembly: AssemblyCopyright("GPL")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("en")]
+
+[assembly: AssemblyVersion("1.0.*")]
+
+[assembly: AssemblyDelaySign(false)]
+[assembly: AssemblyKeyFile("")]

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="117"
+   name=""
+   committed-date="2005-01-12T17:12:33.251385Z"
+   url="http://www.dev-fr.com/MediaNET/src/Components/CJpg"
+   kind="dir"
+   uuid="88aef539-b3e6-0310-b758-c3ab676ffb8b"
+   revision="117"/>
+<entry
+   committed-rev="122"
+   name="AssemblyInfo.cs"
+   text-time="2005-01-17T17:42:25.000000Z"
+   committed-date="2005-01-17T20:14:28.355021Z"
+   checksum="ff06870fcd4e0ddae9ac82e19b45c542"
+   kind="file"
+   revision="122"/>
+<entry
+   name="cpng.glade"
+   kind="file"
+   schedule="add"
+   revision="0"/>
+<entry
+   committed-rev="121"
+   name="CJpg.cs"
+   text-time="2005-01-17T09:10:53.000000Z"
+   committed-date="2005-01-17T10:07:30.863329Z"
+   checksum="57e72d8caa3c5796f415b6831a063180"
+   kind="file"
+   prop-time="2004-12-15T21:55:56.000000Z"
+   revision="121"/>
+<entry
+   name="CPng.cs"
+   kind="file"
+   schedule="add"
+   revision="0"/>
+<entry
+   committed-rev="122"
+   name="Makefile"
+   text-time="2005-01-17T17:53:24.000000Z"
+   committed-date="2005-01-17T20:14:28.355021Z"
+   checksum="48ea553976c4ac9d689656e06ca777da"
+   kind="file"
+   prop-time="2004-12-16T11:49:31.000000Z"
+   revision="122"/>
+<entry
+   committed-rev="121"
+   name="cjpg.glade"
+   text-time="2005-01-17T07:16:41.000000Z"
+   committed-date="2005-01-17T10:07:30.863329Z"
+   checksum="3d3406ee14bcbe3f601dc76a5daec803"
+   kind="file"
+   revision="121"/>
+</wc-entries>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="99"
+   name=""
+   committed-date="2004-12-16T15:23:31.033300Z"
+   url="http://www.dev-fr.com/MediaNET/src/DB"
+   kind="dir"
+   uuid="88aef539-b3e6-0310-b758-c3ab676ffb8b"
+   revision="117"/>
+<entry
+   committed-rev="126"
+   name="CMediaCollection.cs"
+   text-time="2005-03-09T09:50:04.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="bd6c8dd832d0c48c430ae5925c615d0d"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-16T15:19:26.000000Z"
+   revision="126"/>
+</wc-entries>

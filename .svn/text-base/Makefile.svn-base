@@ -1,0 +1,46 @@
+CC=mcs
+SOURCES=		MediaNET.cs \
+                UI/MediaNETInterface.cs \
+                UI/SettingsScreen.cs \
+                UI/SplashScreen.cs \
+                UI/AboutScreen.cs \
+                UI/CrashScreen.cs \
+                Settings/CSettings.cs  \
+                Settings/Conf.cs  \
+                DB/CMediaCollection.cs 
+
+ASSEMBLIES= -pkg:gtk-sharp -pkg:glade-sharp -r:Plugin.dll -r:Mono.Posix
+			
+RESOURCES=  -resource:./UI/medianet.glade,medianet.glade \
+			-resource:./UI/Monroe.png,Monroe.png 
+TARGET=MediaNET.exe
+
+OPTIONS= -target:exe
+
+all: $(TARGET)
+
+extract:
+	cat MediaNET.cs | grep Posix | sed "s/.*Mono.Posix.Catalog.GetString (\"\(.*\)\").*/msgid \"\1\"\nmsgstr \"\"\n\n/g" > patch.po
+distlang:
+	mkdir -p locale/fr/LC_MESSAGES/
+	msgfmt fr.po -o locale/fr/LC_MESSAGES/medianet.mo
+newlang:
+	msginit -l fr --input locale/medianet.po
+	
+i18n:
+	 xgettext *.cs DB/*.cs UI/*.{glade,cs} Components/*/*.{cs,glade} Settings/*.cs -o locale/medianet.po
+
+components:
+	cd Components && make clean && make plugins && cd ..
+	
+MediaNET.exe: $(SOURCES) ./UI/medianet.glade
+	$(CC) $(OPTIONS) -o $(TARGET) $(ASSEMBLIES) $(SOURCES) $(RESOURCES)
+
+clean:
+	rm -f *.exe
+
+purge:
+	rm -f *.dll
+run:
+	mono $(TARGET)
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="117"
+   name=""
+   committed-date="2005-01-12T17:12:33.251385Z"
+   url="http://www.dev-fr.com/MediaNET/src/UI"
+   kind="dir"
+   uuid="88aef539-b3e6-0310-b758-c3ab676ffb8b"
+   revision="117"/>
+<entry
+   committed-rev="126"
+   name="medianet.glade"
+   text-time="2005-03-05T17:45:47.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="cf014a9f184ff04c9209fb201dafa0ee"
+   last-author="lxs"
+   kind="file"
+   revision="126"/>
+<entry
+   committed-rev="42"
+   name="medianet.gladep"
+   text-time="2005-03-05T17:45:47.000000Z"
+   committed-date="2004-11-24T14:41:11.107039Z"
+   checksum="4854f69e3e6c086efb334e41c8362cd3"
+   kind="file"/>
+<entry
+   name="pixmaps"
+   kind="dir"/>
+<entry
+   committed-rev="42"
+   name="Monroe.png"
+   text-time="2004-11-24T14:40:37.000000Z"
+   committed-date="2004-11-24T14:41:11.107039Z"
+   checksum="6609d5b2db75f73ed09b1c9f56467ab0"
+   kind="file"
+   prop-time="2004-11-24T14:40:53.000000Z"/>
+<entry
+   committed-rev="126"
+   name="CrashScreen.cs"
+   text-time="2005-03-09T09:51:00.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="6289a4f2a90fe97cfef371a5b3d1f12c"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-11-28T10:38:57.000000Z"
+   revision="126"/>
+<entry
+   committed-rev="126"
+   name="SettingsScreen.cs"
+   text-time="2005-03-09T09:50:52.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="4df7b0f08b27d0b905ed90451aca4633"
+   last-author="lxs"
+   kind="file"
+   revision="126"/>
+<entry
+   committed-rev="126"
+   name="MediaNETException.cs"
+   text-time="2005-03-09T09:50:20.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="39f40f6ad935bc60f8d3e26db8e89b1f"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-11-28T10:38:57.000000Z"
+   revision="126"/>
+<entry
+   committed-rev="42"
+   name=".collection"
+   text-time="2004-11-24T14:40:37.000000Z"
+   committed-date="2004-11-24T14:41:11.107039Z"
+   checksum="550836ddffee0d6cfce0c56e22ec8cda"
+   kind="file"
+   prop-time="2004-11-24T14:40:53.000000Z"/>
+<entry
+   name="Resources"
+   kind="dir"/>
+<entry
+   committed-rev="126"
+   name="MediaNETInterface.cs"
+   text-time="2005-03-09T09:50:41.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="556e0f9c8d90b246e5e931f6a3942cca"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-13T19:54:44.000000Z"
+   revision="126"/>
+<entry
+   committed-rev="126"
+   name="SplashScreen.cs"
+   text-time="2005-03-09T09:50:46.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="8e719297462b154ba9eba4338ed56dd0"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-09T14:07:14.000000Z"
+   revision="126"/>
+<entry
+   committed-rev="126"
+   name="AboutScreen.cs"
+   text-time="2005-03-09T09:50:56.000000Z"
+   committed-date="2005-03-09T10:11:08.170291Z"
+   checksum="2db30c369a2463db50d02b2edfd6639e"
+   last-author="lxs"
+   kind="file"
+   prop-time="2004-12-09T14:07:14.000000Z"
+   revision="126"/>
+</wc-entries>
