@@ -11,5 +11,6 @@ plugins:
 	cd CPng && make && cd ..
 	cd CBmp && make && cd ..
 	cd COdb && make && cd ..
+	cd CDll && make && cd ..
 
 clean:
