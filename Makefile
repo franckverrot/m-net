@@ -5,8 +5,8 @@ SOURCES=		MediaNET.cs \
                 UI/SplashScreen.cs \
                 UI/AboutScreen.cs \
                 UI/CrashScreen.cs \
-                Settings/CSettings.cs  \
                 Settings/Conf.cs  \
+                Settings/CSettings.cs  \
                 DB/CMediaCollection.cs 
 ASSEMBLIES= -pkg:gtk-sharp -pkg:glade-sharp -r:Plugin.dll -r:Mono.Posix
 RESOURCES=  -resource:./UI/medianet.glade,medianet.glade \

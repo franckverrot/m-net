@@ -334,7 +334,7 @@ namespace MediaNET.Settings
 				#if USING_GCONF
                 private GConf.Client  _Conf     = new GConf.Client();
 				#else
-                private MediaNET.Conf _Conf = Conf.Client();
+                private Conf _Conf = Conf.Client();
 				#endif
 				
                 private Hashtable 	  _Preferences = Hashtable.Synchronized(new Hashtable());

@@ -43,7 +43,7 @@ using System.Diagnostics;
 namespace MediaNET 
 {
         // Main Window class
-        public sealed class MediaNET: MediaNETInterface
+        public sealed class MediaNET: MediaNETInterface, IDisposable
         {
                 //#region members
                 // Media collection, collect ALL files, from Mp3 to Mkv through 
@@ -143,8 +143,8 @@ namespace MediaNET
 				 /// <summary>
 				 /// <p> Default destructor </p>
 				  /// </summary>
-                public void Finalize()
-                        //~MediaNET()
+                //~MediaNET()
+                public void Dispose()
                 {
                         try
                         {
@@ -205,8 +205,7 @@ namespace MediaNET
                         else
                         {
                                 m_sCurrentPath = Environment.CurrentDirectory;
-                                MediaNET m = MediaNET.Instance;
-                                m.Finalize();
+                                using(MediaNET m = MediaNET.Instance);
                         }
                 }
 
@@ -658,10 +657,18 @@ namespace MediaNET
                         {
                                 Gdk.EventButton eb = args.Event;
 
-                                if (eb.Button == 3) { // Right click
-                                        Console.WriteLine (Mono.Posix.Catalog.GetString ("Right click launched directly the music"));
-                                        OnPlayButton(null,null);
-                                        
+                                if (eb.Button == 3) { //right click
+                                        Menu popupMenu = new Menu();
+                                        MenuItem menuPopup1 = new MenuItem ("Play");
+                                        menuPopup1.Activated += new EventHandler(OnPlayButton);
+                                        popupMenu.Add (menuPopup1);
+                                        MenuItem menuPopup2 = new MenuItem ("Delete");
+                                        menuPopup2.Activated += new EventHandler(OnDelButton);
+                                        popupMenu.Add (menuPopup2);
+                                        popupMenu.Popup (null, null, null, IntPtr.Zero,
+                                                        args.Event.Button, args.Event.Time);
+
+                                        popupMenu.ShowAll ();
                                 }
                         }
 
@@ -1002,9 +1009,16 @@ namespace MediaNET
                                 {
                                         itemList.Selection.SelectIter(iter);
                                         itemList.ScrollToCell (itemStore.GetPath (iter), itemList.GetColumn (0), true,  0, 0);
-                                        OnPlayButton(null,null);
                                 }
+                                else // Loop to first song?
+                                {
+                                        itemStore.GetIterFirst(out iter);
+                                        itemList.Selection.SelectIter(iter);
+                                        itemList.ScrollToCell (itemStore.GetPath (iter), itemList.GetColumn (0), true,  0, 0);
+                                }
+                                OnPlayButton(null,null);
                         }
+                        else Console.WriteLine("Nothing left to play");
                         
                 }
 
